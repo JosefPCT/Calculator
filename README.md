@@ -32,3 +32,7 @@ IF num is clicked && operator variable is empty, store in first number variable(
 IF num is clicked && operator variable is not empty, store in second number variable(b)
 IF = button is clicked, call on operate function and pass the variables
 IF clear button is clicked, reset and initialize the variable and display;
+
+extra credit:
+figure out a way to have multiple operations in a single go
+store in an array,
