@@ -41,7 +41,6 @@ function showDisplay(){
 }
 
 function calculate(){
-    //test
     let arrDigits = [];
     let arrOperators = [];
     let x = testArr.join("");
@@ -70,7 +69,46 @@ function calculate(){
 
     console.log(arrOperators);
     console.log(arrDigits)
-    //figure out logic 
+    
+    //logic for operation
+    arrOperators.forEach((item) =>{
+        let firstNumber = parseInt(arrDigits.shift())
+        let secondNumber = parseInt(arrDigits.shift());
+        let result;
+
+        console.log(arrDigits);
+        switch(item) {
+            case "+":
+                console.log("adding");
+                result = add(firstNumber,secondNumber);
+            break;
+
+            case "-":
+                console.log("subtracting...");
+                result = subtract(firstNumber,secondNumber)
+            break;
+
+            case "*":
+                console.log("multiplying...");
+                result = multiply(firstNumber,secondNumber)
+            break;
+
+            case "/":
+                console.log("dividing...")
+                result = divide(firstNumber,secondNumber)
+            break;
+
+            default:
+                console.log("switching error");
+        }
+        if (arrDigits.length === 0){
+            testArr = [];
+            testArr.push(result);
+            showDisplay();
+            return;
+        }
+    });
+
     
 }
 

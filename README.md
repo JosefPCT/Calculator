@@ -57,3 +57,4 @@ iterate through operations array
   store the result into firstNumber (firstNumber = result || arrayDigits[0])
   store the next digit into secondNumber (secondNumber = secondNumber[i + 1])
   using reduce method (acc,item,index,array)
+
