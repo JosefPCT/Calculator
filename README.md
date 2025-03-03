@@ -36,3 +36,24 @@ IF clear button is clicked, reset and initialize the variable and display;
 extra credit:
 figure out a way to have multiple operations in a single go
 store in an array,
+if first character is an operation -> parseInt("") -> NaN
+
+
+
+Calculate function
+takes in an array,
+convert into a string with join(),
+get the first instance of a digit, get the index, 
+  (let index = x.search(/\d/); x.slice(index));
+get the index of the last digit instance, 
+slice from the first instance of a digit, and  the last instance of a digit
+make an an array  of digits (arrayDigits) with split and a regex filter
+make an array of operations (arrayOperations) with split and a regex filter
+iterate through operations array
+  if(operator === +) call addition function, and pass firstNumber and secondNumber
+  if(operator === -) call subtraction function, and pass firstNumber and secondNumber
+  if(operator === *) call multiplication function, and pass firstNumber and secondNumber
+  if(operator === /) call division function, and pass firstNumber and secondNumber
+  store the result into firstNumber (firstNumber = result || arrayDigits[0])
+  store the next digit into secondNumber (secondNumber = secondNumber[i + 1])
+  using reduce method (acc,item,index,array)
