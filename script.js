@@ -5,7 +5,7 @@ let a = "",b = "",operator = "";
 let digit = document.querySelector(".digits");
 let operation = document.querySelector(".operation");
 let display = document.querySelector(".display");
-
+let testArr = [];
 
 digit.addEventListener('click', test);
 operation.addEventListener('click', test);
@@ -25,6 +25,10 @@ function multiply(a,b){
 
 function divide(a,b){
     return a / b;
+}
+
+function back(){
+    testArr.pop();
 }
 
 function addToDisplay(){
@@ -49,7 +53,7 @@ function calculate(){
     // gets all the digits, separated by the operators
     arrDigits = x.split(/(?:\+|\-|\*|\/)+/); // (/\+|\-|\*|\//);
 
-    //removes the last element if it's empty
+    //removes the last element of arrDigits if it's empty
     if(arrDigits[arrDigits.length -1 ] === "") { arrDigits.pop()};
 
     // gets all the operators (with an empty space at the first and last index)
@@ -70,7 +74,7 @@ function calculate(){
     
 }
 
-let testArr = [];
+
 
 function test(e){
 
