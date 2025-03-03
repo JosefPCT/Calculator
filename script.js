@@ -29,6 +29,7 @@ function divide(a,b){
 
 function back(){
     testArr.pop();
+    showDisplay();
 }
 
 function addToDisplay(){
@@ -106,6 +107,9 @@ function calculate(){
             testArr.push(result);
             showDisplay();
             return;
+        } else {
+            arrDigits.unshift(result);
+            console.log(arrDigits);
         }
     });
 
@@ -143,6 +147,11 @@ function test(e){
         if(e.target.dataset.operation === "calculate"){
             console.log('clicked calculate');
             calculate();
+            return;
+        }
+        if(e.target.dataset.operation === "back"){
+            console.log("backspace");
+            back();
             return;
         }
         testArr.push(e.target.dataset.operation);

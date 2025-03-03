@@ -58,3 +58,6 @@ iterate through operations array
   store the next digit into secondNumber (secondNumber = secondNumber[i + 1])
   using reduce method (acc,item,index,array)
 
+
+features to add:(make a branch)
+**account for negative numbers 
