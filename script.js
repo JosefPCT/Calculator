@@ -25,14 +25,33 @@ function divide(a,b){
     return a / b;
 }
 
-function display(){
+function addToDisplay(){
+
+}
+
+function showDisplay(){
     let display = document.querySelector(".display");
     //let text = testArr.join("");
     display.textContent = `${testArr.join("")}`;
 }
 
 function calculate(){
-    
+    //test
+    let arrDigits = [];
+    let arrOperators = [];
+    x = testArr.join("");
+
+    // gets all the digits, separated by the operators
+    arrDigits = x.split(/(?:\+|\-|\*|\/)+/); // (/\+|\-|\*|\//);
+
+    // gets all the operators (with an empty space at the first and last index)
+    arrOperators = x.split(/(?:\d)+/);
+    // remove first and last
+    arrOperators.pop();
+    arrOperators.shift();
+
+    //removes duplicate operations
+    arrOperators = arrOperators.map((item) => item[0]);
 }
 
 let testArr = [];
@@ -59,5 +78,5 @@ function test(e){
         // operator = e.target.dataset.operation;
         testArr.push(e.target.dataset.operation);
     } 
-    display();
+    showDisplay();
 }
