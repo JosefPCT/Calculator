@@ -58,6 +58,11 @@ iterate through operations array
   store the next digit into secondNumber (secondNumber = secondNumber[i + 1])
   using reduce method (acc,item,index,array)
 
+todo:
+-> refactor the test function to clicked function
+-> css changes
+
 
 features to add:(make a branch)
 **account for negative numbers 
+**keyboard support

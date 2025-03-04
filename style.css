@@ -1,8 +1,49 @@
-h1{
-    color: red;
+*{ 
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+   }
+
+body{
+  display: flex;
+  justify-content: center;
+}
+
+.container{
+  margin: 15px;
+  border: 1px solid black;
+  width: 320px;
+  
 }
 
 .display{
+  border: 1px solid rgb(0, 77, 128);
+  margin: 15px;
+  display: flex;
+  align-items: center;;
 
+  height: 32px;
+}
 
+.digits{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.digits button{
+    padding: 15px
+}
+
+.operation{
+    margin: 15px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.operation button{
+    padding: 15px;
 }
