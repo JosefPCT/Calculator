@@ -5,10 +5,10 @@ let a = "",b = "",operator = "";
 let digit = document.querySelector(".digits");
 let operation = document.querySelector(".operation");
 let display = document.querySelector(".display");
-let testArr = [];
+let mainArr = [];
 
-digit.addEventListener('click', test);
-operation.addEventListener('click', test);
+digit.addEventListener('click', clickedButton);
+operation.addEventListener('click', clickedButton);
 
 
 function add(a,b){
@@ -28,23 +28,18 @@ function divide(a,b){
 }
 
 function back(){
-    testArr.pop();
+    mainArr.pop();
     showDisplay();
 }
 
-function addToDisplay(){
-
-}
-
 function showDisplay(){
-    //let text = testArr.join("");
-    display.textContent = `${testArr.join("")}`;
+    display.textContent = `${mainArr.join("")}`;
 }
 
 function calculate(){
     let arrDigits = [];
     let arrOperators = [];
-    let x = testArr.join("");
+    let x = mainArr.join("");
 
     //removes operators on the start of the string by getting the first index of a matched digit then slicing from that index
      let index = x.search(/\d/);
@@ -65,8 +60,6 @@ function calculate(){
     // remove first and last
     arrOperators.pop();
     arrOperators.shift();
-
-    
 
     console.log(arrOperators);
     console.log(arrDigits)
@@ -102,9 +95,10 @@ function calculate(){
             default:
                 console.log("switching error");
         }
+        // to check if array digits is empty, and display result if it is, otherwise unshift the result into the array digits to continue operation
         if (arrDigits.length === 0){
-            testArr = [];
-            testArr.push(result);
+            mainArr = [];
+            mainArr.push(result);
             showDisplay();
             return;
         } else {
@@ -118,29 +112,26 @@ function calculate(){
 
 
 
-function test(e){
+function clickedButton(e){
 
     //console.log(e.target.dataset.digit || e.target.dataset.operation);
     if (e.target.dataset.digit){
         console.log("clicked a digit");
         if(operator){
             console.log('has an operator, adding to b');
-            // b += e.target.dataset.digit;
-            testArr.push(e.target.dataset.digit);
+            mainArr.push(e.target.dataset.digit);
             
         } else if(!operator){
             console.log("no operator");
-            // a += parseInt(e.target.dataset.digit);
-            testArr.push(e.target.dataset.digit);
-        }
-        
-        
+            mainArr.push(e.target.dataset.digit);
+        }  
     }
+
     if (e.target.dataset.operation){
         console.log('clicked an operation');
         if(e.target.dataset.operation === "clear"){
             console.log("clicked clear");
-            testArr = [];
+            mainArr = [];
             display.textContent = "";
             return;
         }
@@ -154,7 +145,7 @@ function test(e){
             back();
             return;
         }
-        testArr.push(e.target.dataset.operation);
+        mainArr.push(e.target.dataset.operation);
     } 
     showDisplay();
 }
